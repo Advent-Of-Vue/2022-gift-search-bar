@@ -39,7 +39,7 @@ watch(searchTerm, newSearchTerm => findProducts(newSearchTerm))
       :disabled="isLoading"
     />
     <p v-if="isLoading" class="text-lg text-center">Please wait...</p>
-    <ul v-else-if="!loading && products.length > 0" class="list-disc">
+    <ul v-else-if="!isLoading && products.length > 0" class="list-disc">
       <li v-for="product in products" :key="product.id">
         {{ product.title }} - ${{ product.price }}
       </li>
